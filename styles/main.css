@@ -32,6 +32,11 @@ main {
 .form-control {
   padding: 10px;
   border-radius: 4px;
+  width: 250px;
+}
+
+input[type*="submit"] {
+  display: none;
 }
 
 .btn {
@@ -48,4 +53,11 @@ main {
   background-color: firebrick;
   color: white;
   outline-style: none;
+}
+
+.complete {
+  background-color: ghostwhite;
+  padding: 10px;
+  width: 250px;
+  margin: 10px auto;
 }

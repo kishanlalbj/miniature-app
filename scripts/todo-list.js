@@ -9,6 +9,7 @@ class ToDoList {
   }
 
   get todoList() {
+    console.log(this.list);
     return this.list;
   }
 }

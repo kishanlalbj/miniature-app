@@ -23,16 +23,19 @@
         <div id="container">
           <form id="form-todo">
             <input
+              id="title"
               required
               class="form-control"
               type="text"
               name="todo"
               value=""
+              minlength="6"
+              maxlength="25"
               placeholder="Task to do"
             />
-            <input class="btn" type="submit" value="submit" />
+            <input class="btn" type="submit" id="submit" value="submit" />
           </form>
-          <ul id="todo-list"></ul>
+          <div id="todo-list"></div>
         </div>
       </section>
     </main>
