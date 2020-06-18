@@ -22,12 +22,6 @@ const UIController = ((todoctl) => {
   let todoTitle = document.getElementById("title");
   let form = document.getElementById("form-todo");
 
-  let listTemplate = `
-      <div class="todo">
-
-      </div>
-  `;
-
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -35,10 +29,10 @@ const UIController = ((todoctl) => {
       title: todoTitle.value,
       completed: false,
     });
-    console.log(list);
 
     todoList.innerHTML += '<div class="complete">' + list.title + "</div>";
     todoctl.getToDoList();
+    form.reset();
   });
 
   return {
