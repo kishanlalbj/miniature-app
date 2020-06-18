@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-color: #292c34;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Pacifico", cursive;
+  padding: 10px;
+}
+
+main {
+  margin: auto;
+  height: 100%;
+}
+
+#container {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: crimson;
+  color: white;
+  border-color: crimson;
+  outline-style: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: firebrick;
+  color: white;
+  outline-style: none;
+}
