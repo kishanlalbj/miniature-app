@@ -1,4 +1,4 @@
-class ToDoList {
+export default class ToDoList {
   constructor() {
     this.list = [];
   }

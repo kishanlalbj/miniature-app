@@ -1,3 +1,6 @@
+import ToDoList from "./todo-list";
+import ToDo from "./todo";
+
 const ToDoController = (() => {
   let todoList = new ToDoList();
 
