@@ -1,17 +1,20 @@
 {
   "name": "minature-app",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jasmine"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kishanlalbj/minature-app.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "todo",
+    "task manager"
+  ],
+  "author": "Kishanlal B J",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kishanlalbj/minature-app/issues"
