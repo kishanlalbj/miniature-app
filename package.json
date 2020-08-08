@@ -6,7 +6,7 @@
   "main": "scripts/app.js",
   "scripts": {
     "test": "./node_modules/.bin/jasmine",
-    "start": "./node_modules/.bin/webpack --config webpack.dev.js",
+    "start": "./node_modules/.bin/webpack-dev-server --config webpack.dev.js --open",
     "build": "./node_modules/.bin/webpack --config webpack.prod.js"
   },
   "repository": {
@@ -25,11 +25,15 @@
   "homepage": "https://github.com/kishanlalbj/minature-app#readme",
   "devDependencies": {
     "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "jasmine": "^3.5.0",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.1"
   }
 }

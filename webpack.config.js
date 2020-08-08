@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   plugins: [new HtmlWebpackPlugin({
-    template: "./src/template.html"
+    template: "./src/index.html"
   })],
   module: {
     rules: [
@@ -12,6 +12,20 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs"
+          },
+        }
+      }
     ],
   },
 };
