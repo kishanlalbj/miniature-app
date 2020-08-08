@@ -34,4 +34,8 @@ export const UIController = ((todoctl) => {
     todoctl.getToDoList();
     form.reset();
   });
+
+  return {
+    init: () => console.log("Application Initialized")
+  }
 })(ToDoController);
