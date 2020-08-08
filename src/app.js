@@ -17,7 +17,7 @@ const ToDoController = (() => {
   };
 })();
 
-const UIController = ((todoctl) => {
+export const UIController = ((todoctl) => {
   let todoList = document.getElementById("todo-list");
   let todoTitle = document.getElementById("title");
   let form = document.getElementById("form-todo");
@@ -34,12 +34,4 @@ const UIController = ((todoctl) => {
     todoctl.getToDoList();
     form.reset();
   });
-
-  return {
-    init: () => {
-      console.log("Initialized");
-    },
-  };
 })(ToDoController);
-
-UIController.init();
