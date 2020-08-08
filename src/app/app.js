@@ -36,6 +36,6 @@ export const UIController = ((todoctl) => {
   });
 
   return {
-    init: () => console.log("Application Initialized")
+    init: () => console.log("Application Initialized...")
   }
 })(ToDoController);

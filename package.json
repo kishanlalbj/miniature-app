@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/kishanlalbj/minature-app#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.1",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
