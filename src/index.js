@@ -1,4 +1,4 @@
 import { UIController } from "./app/app";
-import css from "./styles/main.css";
+import css from "./styles/style.scss";
 
 UIController.init()

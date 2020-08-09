@@ -1,0 +1,43 @@
+@import "./variables";
+@import "./header";
+@import "./inputs";
+
+@mixin setPadding($value) {
+  padding: $value;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url($backgroundImage);
+  background-position: top;
+  font-family: "Roboto", sans-serif;
+  main {
+    margin: auto;
+  }
+}
+
+#container {
+  text-align: center;
+  margin: 20px auto;
+  @include setPadding(20px);
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.complete {
+  background-color: ghostwhite;
+  padding: 10px;
+  width: 250px;
+  margin: 10px auto;
+}

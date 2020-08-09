@@ -1,0 +1,19 @@
+input[type*="submit"] {
+  display: inline-block;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: $primaryColor;
+  color: white;
+  border-color: $primaryColor;
+  outline-style: none;
+  margin-left: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: firebrick;
+    color: white;
+    outline-style: none;
+  }
+}
