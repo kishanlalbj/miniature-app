@@ -1,7 +1,8 @@
+@import "./mixins";
+
 header {
   background-color: whitesmoke;
-  text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   font-family: "Pacifico", cursive;
-  padding: 10px;
+  @include setPadding(10px);
 }

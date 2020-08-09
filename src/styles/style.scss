@@ -1,10 +1,7 @@
 @import "./variables";
 @import "./header";
 @import "./inputs";
-
-@mixin setPadding($value) {
-  padding: $value;
-}
+@import "./mixins";
 
 * {
   margin: 0;
@@ -16,6 +13,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url($backgroundImage);
+  // background-color: rgb(32, 32, 32);
   background-position: top;
   font-family: "Roboto", sans-serif;
   main {
@@ -23,21 +21,22 @@ body {
   }
 }
 
-#container {
-  text-align: center;
-  margin: 20px auto;
-  @include setPadding(20px);
+.container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .form-control {
-  padding: 10px;
+  @include setPadding(10px);
   border-radius: 4px;
-  width: 250px;
+  width: 450px;
 }
 
-.complete {
+.todo {
   background-color: ghostwhite;
-  padding: 10px;
-  width: 250px;
-  margin: 10px auto;
+  @include setPadding(10px);
+  width: 450px;
+  margin: 10px;
 }

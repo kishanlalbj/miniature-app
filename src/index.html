@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
     <title>Minature ToDo</title>
@@ -15,21 +15,29 @@
     </header>
     <main>
         <section>
-            <div id="container">
-                <form id="form-todo">
-                    <input id="title" required class="form-control" type="text" name="todo" value="" minlength="6"
-                        maxlength="25" placeholder="Task to do" />
-                    <input class="btn" type="submit" id="submit" value="submit" />
-                </form>
-                <div id="todo-list"></div>
+            <div class="container">
+                <div>
+                    <form class="form-todo">
+                        <input id="title" required class="form-control" type="text" name="todo" value="" minlength="6"
+                            maxlength="25" placeholder="Task to do" />
+                        <input class="btn" type="submit" id="submit" value="submit" />
+                    </form>
+                </div>
+                <br>
             </div>
-        </section>
 
+            <div class="container">
+                <div class="todo-list"></div>
+            </div>
+
+        </section>
     </main>
-    <!-- <script src="dist/bundle.js"></script> -->
-    <!-- <script src="scripts/todo.js"></script>
+
+    <!--<script src="dist/bundle.js"></script>
+     <script src="scripts/todo.js"></script>
     <script src="scripts/todo-list.js"></script>
     <script type="module" src="./scripts/app.js"></script> -->
+
 </body>
 
 </html>

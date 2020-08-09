@@ -1,5 +1,16 @@
 input[type*="submit"] {
-  display: inline-block;
+  display: none;
+  border: none;
+  &::focus {
+    outline: none;
+  }
+}
+
+input {
+  border: none;
+  &::focus {
+    outline-style: none;
+  }
 }
 
 .btn {
@@ -14,6 +25,20 @@ input[type*="submit"] {
   &:hover {
     background-color: firebrick;
     color: white;
-    outline-style: none;
+  }
+}
+
+.btn-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: $primaryColor;
+  background-color: transparent;
+  border: transparent;
+  padding: 5px;
+  font-weight: 700;
+  &:hover,
+  &:active,
+  &:visited {
+    color: $primaryColor;
   }
 }
