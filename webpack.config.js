@@ -3,8 +3,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
-    mordern: "./src/todo.js"
+    app: "./src/index.js"
   },
   plugins: [new HtmlWebpackPlugin({
     template: "./src/index.html"
