@@ -4,7 +4,7 @@ Miniature is a basic todo app developed to get my hands dirty on JavaScript modu
 
 ## Usage
 
-### Development Mode
+### Development
 
 ```
 $ npm install
