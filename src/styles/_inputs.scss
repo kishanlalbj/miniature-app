@@ -29,6 +29,7 @@ input {
 }
 
 .btn-link {
+  display: none;
   cursor: pointer;
   text-decoration: none;
   color: $primaryColor;
@@ -36,6 +37,7 @@ input {
   border: transparent;
   padding: 5px;
   font-weight: 700;
+  transition: ease-in 0.5 all;
   &:hover,
   &:active,
   &:visited {

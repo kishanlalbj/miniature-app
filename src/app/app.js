@@ -1,76 +1,115 @@
 import ToDo from "./components/todo";
 import HttpClient from "./services/http-service"
 
-const ToDoController = (() => {
+const todoController = (() => {
   let todos = []
-  let http = new HttpClient
+  let http = new HttpClient()
 
   http.get("https://jsonplaceholder.typicode.com/todos/1").then(result => {
     console.log(result)
   })
 
+  const addToDo = (title) => {
+    let id = todos.length
+    let newtodo = new ToDo(id, title, false);
+    todos.push(newtodo)
+    return newtodo
+  }
+
+  const deleteTodo = (id) => {
+    todos.splice(id, 1)
+    return id
+  }
+
   return {
     getToDoList: () => {
       return todos;
     },
-    addToDo: (todo) => {
-      let newtodo = new ToDo(todo.title, todo.completed);
-      todos.push(newtodo)
-      console.log(todos)
-      return newtodo
-    },
-    deleteToDo: (index) => {
-      todos.splice(index, 1)
-      console.log("Agfter delete", todos)
-    }
+    add: (title) => addToDo(title),
+    delete: (id) => deleteTodo(id),
   };
 })();
 
-export const UIController = ((todoctl) => {
-  let todoList = document.querySelector(".todo-list");
-
-  let todoTitle = document.getElementById("title");
-  let form = document.querySelector(".form-todo");
-
-  function addTodo(e) {
-    let list = todoctl.addToDo({
-      title: todoTitle.value,
-      completed: false,
-    });
-    displayTodo()
-    form.reset();
+export const UIController = (() => {
+  let DOM = {
+    todoList: ".todo-list",
+    todoTitle: "title",
+    form: ".form-todo"
   }
 
-  function displayTodo() {
 
-    let lists = todoctl.getToDoList()
-    todoList.innerHTML = ""
 
-    lists.map((todo, index) => {
-      todoList.innerHTML += `
-        <div id="${index}" class="todo">
+  const addListItem = (todo) => {
+    console.log(todo)
+    // console.log(document.querySelector(DOM.todoList))
+    document.querySelector(DOM.todoList).innerHTML += `
+        <div id="todo-${todo.id}" class="todo">
           <span>${todo.title}</span>
-          <button href="#" class="btn-link" style="float:right"> X </button> 
+          <button class="btn-link" style="float:right"> X </button> 
         </div>
       `
+  }
+
+  const removeListItem = (id) => {
+
+    document.getElementById(id).remove()
+
+  }
+
+
+  return {
+    addListItem,
+    removeListItem,
+    getDOM: () => DOM
+  }
+})();
+
+
+export const appController = ((todoCtl, UICtl) => {
+
+  let DOM = UICtl.getDOM()
+
+  const setupEventListeners = () => {
+
+    let form = document.querySelector(".form-todo");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      addItemHandler()
+    });
+
+    // Event delegation setup for delete
+    document.querySelector(DOM.todoList).addEventListener('click', (e) => {
+      let id = e.target.parentNode.id
+      deleteItemHandler(id)
     })
+  }
 
-    let deleteButtons = document.getElementsByClassName("todo")
+  var addItemHandler = () => {
 
-    for (let i = 0; i < deleteButtons.length; i++) {
-      deleteButtons[i].addEventListener("click", (e) => {
-        console.log(e)
-        todoctl.deleteToDo(e.target.id)
-      })
+    // Get the input value
+    let title = document.getElementById(DOM.todoTitle).value
+
+    // Create Todo object
+    let todo = todoCtl.add(title)
+
+    // Add todo to UI
+    UICtl.addListItem(todo)
+
+    // Clear Input
+    document.getElementById(DOM.todoTitle).value = ""
+  }
+
+  var deleteItemHandler = (id) => {
+    if (id) {
+      // Delete from local datastructure 
+      todoCtl.delete(id)
+
+      // Remove from UI
+      UICtl.removeListItem(id)
     }
   }
 
-  function setupEventListeners() {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      addTodo(e)
-    });
-  }
 
   return {
     init: () => {
@@ -78,4 +117,4 @@ export const UIController = ((todoctl) => {
       console.log("Application Initialized...")
     }
   }
-})(ToDoController);
+})(todoController, UIController)

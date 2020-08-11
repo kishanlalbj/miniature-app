@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    app: "./src/index.js",
+    mordern: "./src/todo.js"
+  },
   plugins: [new HtmlWebpackPlugin({
     template: "./src/index.html"
   })],

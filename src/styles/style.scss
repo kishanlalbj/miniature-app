@@ -39,4 +39,7 @@ body {
   @include setPadding(10px);
   width: 450px;
   margin: 10px;
+  &:hover .btn-link {
+    display: block;
+  }
 }
